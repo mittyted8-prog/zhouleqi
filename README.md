@@ -16,7 +16,7 @@
 ```
 zhouleqi-resume/
 ├── index.html      # 主页面（包含所有 HTML/CSS/JS）
-├── CNAME           # 自定义域名配置（zhouleqi.com）
+├── CNAME           # 自定义域名配置（zhouleqi.cloud）
 ├── .nojekyll       # 禁用 GitHub Pages 的 Jekyll 处理
 └── README.md       # 说明文档
 ```
@@ -50,10 +50,10 @@ git push -u origin main
 # 4. 在 GitHub 仓库 Settings → Pages 中启用 Pages
 ```
 
-## 配置自定义域名 zhouleqi.com
+## 配置自定义域名 zhouleqi.cloud
 
 ### 1. GitHub 端设置
-- 仓库 Settings → Pages → Custom domain 填入 `zhouleqi.com`
+- 仓库 Settings → Pages → Custom domain 填入 `zhouleqi.cloud`
 - 勾选 Enforce HTTPS
 
 ### 2. 域名注册商端 DNS 配置
@@ -67,9 +67,9 @@ git push -u origin main
 | A | @ | 185.199.111.153 |
 | CNAME | www | 你的用户名.github.io |
 
-> 本项目的 `CNAME` 文件已配置好 `zhouleqi.com`，上传后 GitHub 会自动识别。
+> 本项目的 `CNAME` 文件已配置好 `zhouleqi.cloud`，上传后 GitHub 会自动识别。
 
-DNS 生效通常需要几分钟到几小时，生效后即可通过 `https://zhouleqi.com` 访问。
+DNS 生效通常需要几分钟到几小时，生效后即可通过 `https://zhouleqi.cloud` 访问。
 
 ## 本地预览
 
