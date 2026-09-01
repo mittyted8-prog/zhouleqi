@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>周乐琪 · 个人简历</title>
+  <meta name="description" content="周乐琪 - 厦门大学金融学硕士，27届应届毕业生，市场/运营/投研方向个人简历" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafafa;
+      --bg-card: #ffffff;
+      --text-primary: #0a0a0a;
+      --text-secondary: #525252;
+      --text-muted: #737373;
+      --border: #e5e5e5;
+      --accent: #171717;
+      --highlight: #2563eb;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --max-width: 720px;
+      --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .font-serif { font-family: 'Noto Serif SC', Georgia, serif; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 250, 250, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    nav { display: flex; align-items: center; gap: 2px; }
+    nav a {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: all var(--transition);
+    }
+    nav a:hover { color: var(--text-primary); background: var(--border); }
+    nav a.active { background: var(--accent); color: #fafafa; }
+
+    /* Main */
+    main { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+    section { padding: 64px 0; }
+    section:first-of-type { padding-top: 48px; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    /* Hero */
+    #hero { padding-top: 72px; padding-bottom: 56px; text-align: center; }
+    .hero-name {
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #525252 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-title {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+    .hero-edu {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    /* Version Switcher */
+    .version-switcher {
+      display: inline-flex;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px;
+      gap: 2px;
+      margin-bottom: 40px;
+    }
+    .version-btn {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: inherit;
+    }
+    .version-btn:hover { color: var(--text-primary); }
+    .version-btn.active {
+      background: var(--accent);
+      color: #fafafa;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .scroll-indicator {
+      display: flex;
+      justify-content: center;
+      margin-top: 32px;
+    }
+    .scroll-dot {
+      width: 24px;
+      height: 38px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      padding-top: 6px;
+    }
+    .scroll-dot::after {
+      content: '';
+      width: 3px;
+      height: 8px;
+      background: var(--text-muted);
+      border-radius: 2px;
+      animation: scrollBounce 2s infinite;
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(8px); opacity: 0.3; }
+    }
+
+    /* About */
+    .about-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .about-text strong { color: var(--text-primary); font-weight: 600; }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 16px;
+      transition: all var(--transition);
+    }
+    .card:hover {
+      border-color: #d4d4d4;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      transform: translateY(-1px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    .card-subtitle {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+    .card-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 10px;
+      background: #f5f5f5;
+      color: var(--text-secondary);
+      border-radius: 999px;
+    }
+
+    /* Experience bullets */
+    .exp-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+    .exp-list li {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .exp-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 5px;
+      height: 5px;
+      background: var(--text-muted);
+      border-radius: 50%;
+    }
+    .exp-list li:last-child { margin-bottom: 0; }
+    .exp-list .highlight {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .exp-list .num {
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .skill-card h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-card p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .skill-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* Contact */
+    #contact { text-align: center; padding-bottom: 80px; }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .contact-link:hover {
+      border-color: #d4d4d4;
+      background: #fafafa;
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      text-align: center;
+    }
+    footer p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Version content transition */
+    .version-content {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .version-content.fade-out {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    /* Fade in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero-name { font-size: 38px; }
+      .section-title { font-size: 24px; }
+      section { padding: 48px 0; }
+      nav { display: none; }
+      .header-inner { justify-content: center; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+    }
+
+    /* Print */
+    @media print {
+      header, .version-switcher, .scroll-indicator, footer { display: none; }
+      body { background: white; }
+      .card { break-inside: avoid; box-shadow: none; }
+      section { padding: 24px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#hero" class="logo">周乐琪</a>
+    <nav id="nav">
+      <a href="#about" class="nav-link">关于</a>
+      <a href="#education" class="nav-link">教育</a>
+      <a href="#experience" class="nav-link">实习</a>
+      <a href="#projects" class="nav-link">项目</a>
+      <a href="#skills" class="nav-link">技能</a>
+      <a href="#contact" class="nav-link">联系</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section id="hero">
+    <h1 class="hero-name font-serif">周乐琪</h1>
+    <p class="hero-title" id="heroTitle">厦门大学 · 金融学硕士 · 27届应届毕业生</p>
+    <p class="hero-edu">市场 / 运营 / 投研方向</p>
+
+    <div class="version-switcher" role="tablist">
+      <button class="version-btn active" data-version="internet" role="tab" aria-selected="true">互联网方向</button>
+      <button class="version-btn" data-version="finance" role="tab" aria-selected="false">金融方向</button>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="fade-in">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">关于我</h2>
+      <div class="version-content" id="aboutContent">
+        <p class="about-text" id="aboutText">
+          厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，熟练运用数据分析与AI工具驱动业务增长。曾在字节跳动飞书商业化、得物、阳光融汇资本等公司实习，积累了<strong>市场运营、商家运营、投研分析</strong>的复合经验。擅长从0到1搭建数据看板与运营SOP，以数据驱动决策，以精细化运营提升转化效率。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="fade-in">
+      <div class="section-label">Education</div>
+      <h2 class="section-title">教育背景</h2>
+      <p class="section-subtitle">金融学硕士 · 金融数学学士</p>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">厦门大学 · 经济学院 · 金融学（硕士）</div>
+            <div class="card-subtitle">核心课程：人工智能和深度学习，金融科技，金融计量，高级宏微观经济学，高级计量经济学</div>
+          </div>
+          <div class="card-date">2024.09 - 2027.06</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">安徽大学 · 数学科学学院 · 金融数学（学士）</div>
+            <div class="card-subtitle">核心课程：实变函数，数学分析，数值分析，高等代数，金融风险管理，金融时间序列分析</div>
+          </div>
+          <div class="card-date">2019.09 - 2023.06</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="fade-in">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">实习经历</h2>
+      <p class="section-subtitle" id="expSubtitle">市场运营 · 商家运营 · 投研分析</p>
+
+      <div class="version-content" id="experienceContent">
+        <!-- Internet version (default) -->
+        <div id="exp-internet">
+          <!-- ByteDance -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">字节跳动 · 飞书商业化 · 市场实习生</div>
+              </div>
+              <div class="card-date">2026.05 - 至今</div>
+            </div>
+            <ul class="exp-list">
+              <li><span class="highlight">飞书大使项目运营：</span>负责飞书大使推荐计划<span class="num">702条</span>线索全链路运营（核验/清洗/DR/AE分配），完成<span class="num">109条</span>结算案例资格交叉校验与审批提报、影响<span class="num">ARR超3100万</span>、激励发放约<span class="num">88万</span>。搭建月度结算看板，从风神系统取数更新主表台账，汇总核心指标，提升结算复核与进度追踪效率。</li>
+              <li><span class="highlight">路演活动跟进与复盘：</span>参与<span class="num">10场</span>豆包企业版路演（覆盖4大区7城，含单日3城同开），覆盖<span class="num">869家</span>、赢单<span class="num">337家</span>（赢单率<span class="num">38.8%</span>）、成交<span class="num">6,525席</span>、ARR约<span class="num">790万</span>，联动<span class="num">45家</span>渠道伙伴。负责Kick-off战略对齐文档与自闭环执行文档落地，保障单场120-150人活动零事故执行；撰写多场复盘报告，提炼客均席位从首场<span class="num">6席</span>提升至<span class="num">19.4席</span>等关键结论，支撑会销从单场验证到伙伴规模复制。</li>
+              <li><span class="highlight">路演数据化与AI工具提效：</span>基于飞书妙搭搭建路演管理驾驶舱（双页面、<span class="num">10+</span>可视化组件、全局筛选联动下钻），实现10场全链路数据日更，替代人工小时级拉表；设计驾驶舱指标体系，支撑四大区横向对比；搭建AI线索上传转表工具，自动完成活动后线索批量解析与转表，提升活动转化与运营闭环效率。</li>
+            </ul>
+          </div>
+
+          <!-- Dewu -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">得物 · 潮流业务生活部 · 商家运营实习生</div>
+              </div>
+              <div class="card-date">2026.01 - 2026.04</div>
+            </div>
+            <ul class="exp-list">
+              <li><span class="highlight">全链路商家管理与动销转化：</span>独立驱动<span class="num">39个</span>品牌/商家完成从建联、资质审查、上会到入驻落库的全闭环。精细化出价指导与活动资源对接，跟踪上架率及动销表现，实现新品牌初期动销率突破<span class="num">80%</span>，帮助团队Q1引入客户<span class="num">372家</span>，动销<span class="num">GMV 1709W</span>。</li>
+              <li><span class="highlight">策略运营与看板搭建：</span>负责家居、配饰类目的靶向池梳理，结合品类分层、行业趋势，输出差异化招商策略，并用多维表格搭建动销看板、用漏斗图定位转化卡点。优化完成全流程招商运营SOP，按类目与SPU维度细化关键环节，将平均入驻周期缩短<span class="num">30%</span>。</li>
+              <li><span class="highlight">线下渠道拓展与商家策略：</span>执行"前期预选-中期现场BD-后期社群转化"三段式策略。线下深度访谈<span class="num">30+家</span>商家，优化类目供给结构，提升价格带覆盖与商品丰富度，累计商家落地<span class="num">10余家</span>。</li>
+            </ul>
+          </div>
+
+          <!-- Sunshine -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">阳光融汇资本创投 · 科技组 · 投研实习生</div>
+              </div>
+              <div class="card-date">2025.08 - 2025.12</div>
+            </div>
+            <ul class="exp-list">
+              <li><span class="highlight">项目跟踪：</span>独立完成科技领域<span class="num">二十余篇</span>创始人访谈会议纪要整理与分析，覆盖LED、PCB、SSD、SaaS等多个细分行业，有效提炼核心信息并形成结构化记录。</li>
+              <li><span class="highlight">投研建模：</span>对LED/PCB企业进行深度研究，独立撰写预投决报告并完成上会汇报，通过财务数据与行业分析为企业完成估值建模，结合业务数据与市场对标进行多情景测算，为投资决策提供量化依据。</li>
+              <li><span class="highlight">尽调访谈：</span>深度参与线下尽调，组织对PCB行业重点客户（三安光电）的专场访谈，获取一线市场反馈。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Finance version -->
+        <div id="exp-finance" style="display:none;">
+          <!-- Sunshine (first in finance) -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">阳光融汇资本创投 · 科技组 · 投研实习生</div>
+              </div>
+              <div class="card-date">2025.08 - 2025.12</div>
+            </div>
+            <ul class="exp-list">
+              <li><span class="highlight">项目跟踪：</span>独立完成科技领域<span class="num">二十余篇</span>创始人访谈会议纪要整理与分析，覆盖LED、PCB、SSD、SaaS等多个细分行业，有效提炼核心信息并形成结构化记录。</li>
+              <li><span class="highlight">投研建模：</span>参与LED/PCB企业深度研究，独立撰写预投决报告并完成上会汇报，通过财务数据与行业分析为企业完成估值建模，结合业务数据与市场对标进行多情景测算，为投资决策提供量化依据。</li>
+              <li><span class="highlight">尽调访谈：</span>深度参与<span class="num">三次</span>线下尽职调查，协助完成资料收集、业务访谈及风险要点整理。独立组织对PCB行业重点客户（三安光电）的专场访谈，协调内外部资源完成调研目标，获取一线市场反馈。</li>
+            </ul>
+          </div>
+
+          <!-- Guoyuan Securities (new) -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">国元证券 · 债券业务部</div>
+              </div>
+              <div class="card-date">2023.03 - 2023.06</div>
+            </div>
+            <ul class="exp-list">
+              <li><span class="highlight">调查征信：</span>协同<span class="num">3人</span>项目小组，运用Wind、企业征信系统、企查查等工具，对<span class="num">十余家</span>目标公司开展信用评级与经营风险分析，输出<span class="num">10+份</span>风险评估报告，为项目决策提供数据支撑。</li>
+              <li><span class="highlight">流程标准化：</span>主导<span class="num">20余家</span>公司发债项目底稿的标准化整理（含财务报告、法律文件等），实施系统性整理、编页与排版作业，完成装订归档。</li>
+              <li><span class="highlight">数据分析：</span>运用专业工具对<span class="num">十余家</span>地方城投债公司财务报表进行精细化数据处理、校验及动态更新维护。</li>
+            </ul>
+          </div>
+
+          <!-- ByteDance -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">字节跳动 · 飞书商业化 · 市场实习生</div>
+              </div>
+              <div class="card-date">2026.05 - 至今</div>
+            </div>
+            <ul class="exp-list">
+              <li><span class="highlight">飞书大使项目运营：</span>负责飞书大使推荐计划<span class="num">702条</span>线索全链路运营（核验/清洗/DR/AE分配），完成<span class="num">109条</span>结算案例资格交叉校验与审批提报、影响<span class="num">ARR超3100万</span>、激励发放约<span class="num">88万</span>。搭建月度结算看板，从风神系统取数更新主表台账，汇总核心指标，提升结算复核与进度追踪效率。</li>
+              <li><span class="highlight">路演活动跟进与复盘：</span>参与<span class="num">10场</span>豆包企业版会销路演（覆盖4大区7城，含单日3城同开），覆盖<span class="num">869家</span>、赢单<span class="num">337家</span>（赢单率<span class="num">38.8%</span>）、成交<span class="num">6,525席</span>、ARR约<span class="num">790万</span>，联动<span class="num">45家</span>渠道伙伴。负责Kick-off战略对齐文档与自闭环执行文档落地，保障单场120-150人活动零事故执行；撰写多场复盘报告，提炼客均席位从首场<span class="num">6席</span>提升至<span class="num">19.4席</span>等关键结论，支撑会销从单场验证到伙伴规模复制。</li>
+              <li><span class="highlight">路演数据化与AI工具提效：</span>基于飞书妙搭搭建路演管理驾驶舱（双页面、<span class="num">10+</span>可视化组件、全局筛选联动下钻），实现10场全链路数据日更，替代人工小时级拉表；设计驾驶舱指标体系，支撑四大区横向对比；搭建AI线索上传转表工具，自动完成活动后线索批量解析与转表，提升活动转化与运营闭环效率。</li>
+            </ul>
+          </div>
+
+          <!-- Dewu -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">得物 · 潮流业务生活部 · 商家运营实习生</div>
+              </div>
+              <div class="card-date">2026.01 - 2026.04</div>
+            </div>
+            <ul class="exp-list">
+              <li><span class="highlight">全链路商家管理与动销转化：</span>独立驱动<span class="num">39个</span>品牌/商家完成从建联、资质审查、上会到入驻落库的全闭环。精细化出价指导与活动资源对接，跟踪上架率及动销表现，实现新品牌初期动销率突破<span class="num">80%</span>，帮助团队Q1引入客户<span class="num">372家</span>，动销<span class="num">GMV 1709W</span>。</li>
+              <li><span class="highlight">策略运营与看板搭建：</span>负责家居、配饰类目的靶向池梳理，结合品类分层、行业趋势，输出差异化招商策略，并用多维表格搭建动销看板、用漏斗图定位转化卡点。优化完成全流程招商运营SOP，按类目与SPU维度细化关键环节，将平均入驻周期缩短<span class="num">30%</span>。</li>
+              <li><span class="highlight">线下渠道拓展与商家策略：</span>执行"前期预选-中期现场BD-后期社群转化"三段式策略。线下深度访谈<span class="num">30+家</span>商家，优化类目供给结构，提升价格带覆盖与商品丰富度，累计商家落地<span class="num">10余家</span>。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Work (finance only) -->
+  <section id="student-work" style="display:none;">
+    <div class="fade-in">
+      <div class="section-label">Student Work</div>
+      <h2 class="section-title">学生工作</h2>
+      <p class="section-subtitle">组织协调 · 活动策划 · 对外联络</p>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">厦门大学 · 金融系第三团支部 · 组织委员</div>
+          </div>
+          <div class="card-date">2025.09 - 至今</div>
+        </div>
+        <ul class="exp-list">
+          <li>负责班级在团校、学校方面组织事务，主导策划并统筹执行传达<span class="num">三十余项</span>组织活动，涵盖学术讲座、专业会议及体育赛事等多元类型。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">厦门大学 · 经济学科研究生团总支 · 联络部</div>
+          </div>
+          <div class="card-date">2025.09 - 2026.06</div>
+        </div>
+        <ul class="exp-list">
+          <li>担任研究生代表大会负责人，统筹协调研究生会各职能部门工作，编制经济学科领域专项调查问卷，并全程策划民族文化节演出活动的节目编排。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">安徽大学 · 数学科学学院学生会 · 对外联络部</div>
+          </div>
+          <div class="card-date">2019.09 - 2020.06</div>
+        </div>
+        <ul class="exp-list">
+          <li>与教育行业合作伙伴及赞助商建立沟通联系，为数学科学学院募集超过<span class="num">一万元</span>资金及物资支持，并同步推进学校品牌形象与教育理念的对外传播。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="fade-in">
+      <div class="section-label">Projects</div>
+      <h2 class="section-title">项目经历</h2>
+      <p class="section-subtitle">市场调研 · 数据分析 · 建模</p>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">第十五届"正大杯"市场调查与分析大赛 · 国家级三等奖</div>
+            <div class="card-subtitle">获奖作品："风乘朴朴，即享生鲜"——厦门市朴朴超市消费者需求的调研与分析</div>
+          </div>
+          <div class="card-date">2024.09 - 2024.12</div>
+        </div>
+        <ul class="exp-list">
+          <li>围绕朴朴超市消费者需求开展问卷调研与数据分析，基于<span class="highlight">Stata与R</span>从用户特征、使用影响因素与营销热点等维度进行建模；采用<span class="highlight">K-Modes聚类、因子分析</span>等方法识别消费者核心需求特征与使用偏好，形成结构化研究报告并获得国家级三等奖。</li>
+        </ul>
+        <div class="card-tags">
+          <span class="tag">Stata</span>
+          <span class="tag">R语言</span>
+          <span class="tag">K-Modes聚类</span>
+          <span class="tag">因子分析</span>
+          <span class="tag">市场调研</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="fade-in">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">综合能力</h2>
+      <p class="section-subtitle">语言 · 计算机 · 兴趣 · 荣誉</p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4><span class="skill-icon">🌐</span>语言水平</h4>
+          <p>英语四六级，雅思<span style="font-weight:600;color:var(--text-primary)">6.5分</span>（听力7.0/阅读7.5），英文流利听读写，普通话二级甲等</p>
+        </div>
+        <div class="skill-card">
+          <h4><span class="skill-icon">💻</span>计算机技能</h4>
+          <p>熟练使用Codex、Claude、豆包工作，掌握Excel、妙搭、飞书多维表格、SQL、Python、R</p>
+        </div>
+        <div class="skill-card">
+          <h4><span class="skill-icon">⚽</span>兴趣爱好</h4>
+          <p>阅读、体育（足球、篮球）、音乐（吉他）</p>
+        </div>
+        <div class="skill-card">
+          <h4><span class="skill-icon">🏆</span>所获荣誉</h4>
+          <p>优秀共青团员，思明校区"嘉庚杯"足球联赛冠军、厦门大学"超级杯"足球联赛冠军</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="fade-in">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">联系方式</h2>
+      <p class="section-subtitle">期待与您的进一步交流</p>
+
+      <div class="contact-links">
+        <a href="mailto:zlq1106301501@163.com" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          zlq1106301501@163.com
+        </a>
+        <div class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          15156294620
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 周乐琪 · 个人简历网站</p>
+</footer>
+
+<script>
+  // Version switching
+  const versionBtns = document.querySelectorAll('.version-btn');
+  const expInternet = document.getElementById('exp-internet');
+  const expFinance = document.getElementById('exp-finance');
+  const studentWork = document.getElementById('student-work');
+  const aboutText = document.getElementById('aboutText');
+  const heroTitle = document.getElementById('heroTitle');
+  const expSubtitle = document.getElementById('expSubtitle');
+
+  const aboutInternet = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，熟练运用数据分析与AI工具驱动业务增长。曾在字节跳动飞书商业化、得物、阳光融汇资本等公司实习，积累了<strong>市场运营、商家运营、投研分析</strong>的复合经验。擅长从0到1搭建数据看板与运营SOP，以数据驱动决策，以精细化运营提升转化效率。';
+
+  const aboutFinance = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，具备扎实的财务分析与估值建模能力。曾在阳光融汇资本、国元证券、字节跳动等公司实习，积累了<strong>投研分析、债券业务、市场运营</strong>的复合经验。擅长行业研究、财务建模与数据分析，能够结合业务数据与市场对标为投资决策提供量化依据。';
+
+  function switchVersion(version) {
+    // Update buttons
+    versionBtns.forEach(btn => {
+      const isActive = btn.dataset.version === version;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive);
+    });
+
+    // Fade out content
+    const expContent = document.getElementById('experienceContent');
+    const aboutContent = document.getElementById('aboutContent');
+    expContent.classList.add('fade-out');
+    aboutContent.classList.add('fade-out');
+
+    setTimeout(() => {
+      if (version === 'internet') {
+        expInternet.style.display = 'block';
+        expFinance.style.display = 'none';
+        studentWork.style.display = 'none';
+        aboutText.innerHTML = aboutInternet;
+        heroTitle.textContent = '厦门大学 · 金融学硕士 · 27届应届毕业生';
+        expSubtitle.textContent = '市场运营 · 商家运营 · 投研分析';
+      } else {
+        expInternet.style.display = 'none';
+        expFinance.style.display = 'block';
+        studentWork.style.display = 'block';
+        aboutText.innerHTML = aboutFinance;
+        heroTitle.textContent = '厦门大学 · 金融学硕士 · 27届应届毕业生';
+        expSubtitle.textContent = '投研分析 · 债券业务 · 市场运营';
+      }
+      expContent.classList.remove('fade-out');
+      aboutContent.classList.remove('fade-out');
+    }, 250);
+  }
+
+  versionBtns.forEach(btn => {
+    btn.addEventListener('click', () => switchVersion(btn.dataset.version));
+  });
+
+  // Scroll spy for nav
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+  sections.forEach(section => observer.observe(section));
+
+  // Fade in on scroll
+  const fadeElements = document.querySelectorAll('.fade-in');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeElements.forEach(el => fadeObserver.observe(el));
+
+  // Smooth scroll for nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
