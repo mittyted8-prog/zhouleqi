@@ -134,8 +134,7 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .hero-title { font-size: 16px; color: var(--text-secondary); margin-bottom: 6px; font-weight: 400; }
-    .hero-edu { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
+    .hero-title { font-size: 16px; color: var(--text-secondary); margin-bottom: 26px; font-weight: 400; }
 
     /* Job target tags */
     .job-targets {
@@ -446,7 +445,7 @@
       main { max-width: 100%; padding: 0; }
       #hero { padding: 0 0 16px 0; text-align: left; }
       .hero-name { font-size: 30px; text-align: left; -webkit-text-fill-color: #000; background: none; margin-bottom: 6px; }
-      .hero-title, .hero-edu { text-align: left; margin-bottom: 4px; }
+      .hero-title { text-align: left; margin-bottom: 4px; }
       .job-targets { justify-content: flex-start; margin-bottom: 12px; }
       .job-target { border-color: #ccc; }
       section { padding: 14px 0; break-inside: avoid-page; }
@@ -493,13 +492,11 @@
   <section id="hero">
     <h1 class="hero-name font-serif">周乐琪</h1>
     <p class="hero-title" id="heroTitle">厦门大学 · 金融学硕士 · 27届应届毕业生</p>
-    <p class="hero-edu">市场运营 / 商业分析 / 投研方向</p>
 
-    <div class="job-targets">
+    <div class="job-targets" id="jobTargets">
       <span class="job-target">市场运营</span>
       <span class="job-target">商业分析</span>
       <span class="job-target">产品/商家运营</span>
-      <span class="job-target">投研分析</span>
     </div>
 
     <div class="version-switcher no-print" role="tablist">
@@ -522,7 +519,7 @@
       <h2 class="section-title">关于我</h2>
       <div class="version-content" id="aboutContent">
         <p class="about-text" id="aboutText">
-          厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，擅长用数据分析与AI/低代码工具解决业务卡点。曾在字节跳动飞书商业化、得物、阳光融汇资本实习，覆盖<strong>路演运营、商家运营、投研分析</strong>全链路。习惯从0到1搭建数据看板与运营SOP：独立设计路演管理驾驶舱与AI转表工具，把人工小时级拉表变为数据日更，以数据驱动决策、以精细化运营提升转化。
+          厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，擅长用数据分析与AI/低代码工具解决业务卡点。曾在字节跳动飞书商业化、得物、阳光融汇资本实习，覆盖<strong>会销运营、商家运营、投研分析</strong>全链路。习惯从0到1搭建数据看板与运营SOP：独立设计路演管理驾驶舱与AI转表工具，把人工小时级拉表变为数据日更，以数据驱动决策、以精细化运营提升转化。
         </p>
       </div>
     </div>
@@ -538,7 +535,7 @@
       <div class="highlight-grid">
         <div class="highlight-card">
           <div class="highlight-icon">🚀</div>
-          <h4>字节跳动 · 路演运营与数据化</h4>
+          <h4>字节跳动 · 会销运营与数据化</h4>
           <p>参与10场豆包企业版路演（4大区7城），负责执行文档落地与零事故执行；独立搭建路演驾驶舱实现数据日更。</p>
           <div class="big-num">覆盖近千家企业 · 成交数千席位 · 近千万级ARR</div>
         </div>
@@ -605,7 +602,7 @@
             </div>
             <ul class="exp-list">
               <li><span class="hl">飞书大使项目运营：</span>负责推荐计划<span class="num">数百条</span>线索全链路运营（核验/清洗/DR/AE分配），完成<span class="num">百余个</span>结算案例五维交叉校验与审批提报、影响<span class="num">数千万级ARR</span>、激励约<span class="num">近百万级</span>；搭建月度结算看板提升对账效率。</li>
-              <li><span class="hl">路演路演全流程运营：</span>参与<span class="num">10场</span>豆包企业版路演（4大区7城，含单日3城同开），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>（赢单率<span class="num">38.8%</span>）、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；负责Kick-off对齐与自闭环执行文档落地，保障单场120-150人零事故执行。</li>
+              <li><span class="hl">会销路演全流程运营：</span>参与<span class="num">10场</span>豆包企业版路演（4大区7城，含单日3城同开），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>（赢单率<span class="num">38.8%</span>）、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；负责Kick-off对齐与自闭环执行文档落地，保障单场120-150人零事故执行。</li>
               <li><span class="hl">数据化与AI提效：</span>基于妙搭搭建路演管理驾驶舱（双页面、10+组件、全局筛选下钻）实现10场数据日更；设计增购指标体系V2支撑四大区横向对比；搭建AI线索上传转表工具替代手工录入（详见代表作品）。</li>
             </ul>
           </div>
@@ -673,7 +670,7 @@
             </div>
             <ul class="exp-list">
               <li><span class="hl">飞书大使项目运营：</span>负责<span class="num">数百条</span>线索全链路运营，完成<span class="num">百余个</span>结算交叉校验与审批、影响<span class="num">数千万级ARR</span>、激励约<span class="num">近百万级</span>；搭建月度结算看板。</li>
-              <li><span class="hl">路演路演运营：</span>参与<span class="num">10场</span>路演路演（4大区7城），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；保障单场120-150人零事故执行。</li>
+              <li><span class="hl">会销路演运营：</span>参与<span class="num">10场</span>会销路演（4大区7城），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；保障单场120-150人零事故执行。</li>
               <li><span class="hl">数据化与AI提效：</span>搭建路演管理驾驶舱实现10场数据日更，设计增购指标体系V2，搭建AI线索转表工具替代手工录入。</li>
             </ul>
           </div>
@@ -744,18 +741,18 @@
       <div class="case-card">
         <div class="case-head">
           <span class="case-badge">飞书妙搭 · 数据看板</span>
-          <div class="case-title">SMB 豆包企业版路演路演管理驾驶舱</div>
+          <div class="case-title">SMB 豆包企业版会销路演管理驾驶舱</div>
           <div class="case-meta">字节跳动 · 飞书商业化 · 从需求到上线约3天</div>
         </div>
 
         <div class="star-block">
           <div class="star-label"><span class="star-letter">S</span>背景 Situation</div>
-          <p>10场路演跨4大区7城密集落地、联动数十家渠道伙伴，但数据散落在报名表单、CRM签约系统、会后跟进表中：每场靠人工拉Excel拼数小时、口径不统一；四大区无法横向对比；T+7增购、席位激活等会后转化无抓手。</p>
+          <p>10场会销跨4大区7城密集落地、联动数十家渠道伙伴，但数据散落在报名表单、CRM签约系统、会后跟进表中：每场靠人工拉Excel拼数小时、口径不统一；四大区无法横向对比；T+7增购、席位激活等会后转化无抓手。</p>
         </div>
 
         <div class="star-block">
           <div class="star-label"><span class="star-letter">T</span>任务 Task</div>
-          <p>独立搭建一个驾驶舱，实现路演全链路（邀约→到场→成交→T+7增购）数据一屏可视，支持大区/场次/伙伴多维筛选下钻，并沉淀一套标准化指标体系供数十家伙伴统一复盘。</p>
+          <p>独立搭建一个驾驶舱，实现会销全链路（邀约→到场→成交→T+7增购）数据一屏可视，支持大区/场次/伙伴多维筛选下钻，并沉淀一套标准化指标体系供数十家伙伴统一复盘。</p>
         </div>
 
         <div class="star-block">
@@ -877,8 +874,19 @@
   const aboutText = document.getElementById('aboutText');
   const expSubtitle = document.getElementById('expSubtitle');
   const downloadBtn = document.getElementById('downloadBtn');
+  const jobTargets = document.getElementById('jobTargets');
+  // 两套求职方向标签：随版本切换
+  const jobTargetMap = {
+    internet: ['市场运营', '商业分析', '产品/商家运营'],
+    finance: ['投研分析', '行业研究', '投资银行']
+  };
+  function renderJobTargets(version) {
+    jobTargets.innerHTML = jobTargetMap[version]
+      .map(t => '<span class="job-target">' + t + '</span>')
+      .join('');
+  }
 
-  const aboutInternet = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，擅长用数据分析与AI/低代码工具解决业务卡点。曾在字节跳动飞书商业化、得物、阳光融汇资本实习，覆盖<strong>路演运营、商家运营、投研分析</strong>全链路。习惯从0到1搭建数据看板与运营SOP：独立设计路演管理驾驶舱与AI转表工具，把人工小时级拉表变为数据日更，以数据驱动决策、以精细化运营提升转化。';
+  const aboutInternet = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，擅长用数据分析与AI/低代码工具解决业务卡点。曾在字节跳动飞书商业化、得物、阳光融汇资本实习，覆盖<strong>会销运营、商家运营、投研分析</strong>全链路。习惯从0到1搭建数据看板与运营SOP：独立设计路演管理驾驶舱与AI转表工具，把人工小时级拉表变为数据日更，以数据驱动决策、以精细化运营提升转化。';
 
   const aboutFinance = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，具备扎实的财务分析与估值建模能力。曾在阳光融汇资本、国元证券、字节跳动实习，积累<strong>投研分析、债券业务、市场运营</strong>复合经验。擅长行业研究、财务建模与数据分析，能够结合业务数据与市场对标为投资决策提供量化依据。';
 
@@ -903,6 +911,7 @@
         expSubtitle.textContent = '市场运营 · 商家运营 · 投研分析';
         downloadBtn.href = 'resume-internet.pdf';
         downloadBtn.setAttribute('download', '周乐琪-互联网方向简历.pdf');
+        renderJobTargets('internet');
       } else {
         expInternet.style.display = 'none';
         expFinance.style.display = 'block';
@@ -911,6 +920,7 @@
         expSubtitle.textContent = '投研分析 · 债券业务 · 市场运营';
         downloadBtn.href = 'resume-finance.pdf';
         downloadBtn.setAttribute('download', '周乐琪-金融方向简历.pdf');
+        renderJobTargets('finance');
       }
       expContent.classList.remove('fade-out');
       aboutContent.classList.remove('fade-out');
