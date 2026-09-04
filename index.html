@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>周乐琪 · 个人简历 | 市场运营 / 商业分析</title>
   <meta name="description" content="周乐琪 - 厦门大学金融学硕士，27届应届毕业生，市场运营/商业分析/投研方向个人简历" />
+  <meta name="author" content="周乐琪" />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- Favicon: ZLQ 字母 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232563eb'/><text x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='bold' fill='white' text-anchor='middle' letter-spacing='-0.5'>ZLQ</text></svg>" />
+
+  <!-- 分享卡片 Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zhouleqi.cloud/" />
+  <meta property="og:title" content="周乐琪｜厦门大学金融硕士 · 个人网站" />
+  <meta property="og:description" content="市场运营 / 商业分析 / 投研方向 · 字节跳动·得物·阳光融汇实习经历与代表作品，支持下载 PDF 简历" />
+  <meta property="og:site_name" content="周乐琪 · 个人简历" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="周乐琪｜厦门大学金融硕士 · 个人网站" />
+  <meta name="twitter:description" content="市场运营 / 商业分析 / 投研方向 · 点击查看简历与代表作品" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -372,6 +389,29 @@
       transition: all var(--transition);
     }
     .contact-link:hover { border-color: #d4d4d4; background: #fafafa; transform: translateY(-1px); }
+    button.contact-link { font-family: inherit; cursor: pointer; outline: none; }
+    .copy-btn:active { transform: scale(0.97); }
+    .contact-hint { font-size: 12.5px; color: var(--text-muted); margin-top: 14px; }
+    /* Copy toast */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 40px;
+      transform: translateX(-50%) translateY(16px);
+      background: var(--accent);
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 12px 22px;
+      border-radius: 999px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1);
+      z-index: 999;
+      white-space: nowrap;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
     footer { border-top: 1px solid var(--border); padding: 24px 0; text-align: center; }
     footer p { font-size: 12px; color: var(--text-muted); }
@@ -500,13 +540,13 @@
           <div class="highlight-icon">🚀</div>
           <h4>字节跳动 · 会销运营与数据化</h4>
           <p>参与10场豆包企业版路演（4大区7城），负责执行文档落地与零事故执行；独立搭建路演驾驶舱实现数据日更。</p>
-          <div class="big-num">覆盖869家 · 成交6,525席 · ARR约790万</div>
+          <div class="big-num">覆盖近千家企业 · 成交数千席位 · 近千万级ARR</div>
         </div>
         <div class="highlight-card">
           <div class="highlight-icon">🛍️</div>
           <h4>得物 · 商家运营与动销转化</h4>
-          <p>独立驱动39个品牌完成入驻全闭环，搭建动销看板与招商SOP，用漏斗图定位转化卡点。</p>
-          <div class="big-num">新品牌动销率破80% · GMV 1709W · 周期缩短30%</div>
+          <p>独立驱动数十个品牌完成入驻全闭环，搭建动销看板与招商SOP，用漏斗图定位转化卡点。</p>
+          <div class="big-num">新品牌动销率破80% · 千万级GMV · 周期缩短30%</div>
         </div>
         <div class="highlight-card">
           <div class="highlight-icon">📈</div>
@@ -564,8 +604,8 @@
               <div class="card-date">2026.05 - 至今</div>
             </div>
             <ul class="exp-list">
-              <li><span class="hl">飞书大使项目运营：</span>负责推荐计划<span class="num">702条</span>线索全链路运营（核验/清洗/DR/AE分配），完成<span class="num">109条</span>结算案例五维交叉校验与审批提报、影响<span class="num">ARR超3,100万</span>、激励约<span class="num">88万</span>；搭建月度结算看板提升对账效率。</li>
-              <li><span class="hl">会销路演全流程运营：</span>参与<span class="num">10场</span>豆包企业版路演（4大区7城，含单日3城同开），覆盖<span class="num">869家</span>、赢单<span class="num">337家</span>（<span class="num">38.8%</span>）、成交<span class="num">6,525席</span>、ARR约<span class="num">790万</span>，联动<span class="num">45家</span>伙伴；负责Kick-off对齐与自闭环执行文档落地，保障单场120-150人零事故执行。</li>
+              <li><span class="hl">飞书大使项目运营：</span>负责推荐计划<span class="num">数百条</span>线索全链路运营（核验/清洗/DR/AE分配），完成<span class="num">百余个</span>结算案例五维交叉校验与审批提报、影响<span class="num">数千万级ARR</span>、激励约<span class="num">近百万级</span>；搭建月度结算看板提升对账效率。</li>
+              <li><span class="hl">会销路演全流程运营：</span>参与<span class="num">10场</span>豆包企业版路演（4大区7城，含单日3城同开），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>（赢单率<span class="num">38.8%</span>）、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；负责Kick-off对齐与自闭环执行文档落地，保障单场120-150人零事故执行。</li>
               <li><span class="hl">数据化与AI提效：</span>基于妙搭搭建路演管理驾驶舱（双页面、10+组件、全局筛选下钻）实现10场数据日更；设计增购指标体系V2支撑四大区横向对比；搭建AI线索上传转表工具替代手工录入（详见代表作品）。</li>
             </ul>
           </div>
@@ -577,7 +617,7 @@
               <div class="card-date">2026.01 - 2026.04</div>
             </div>
             <ul class="exp-list">
-              <li><span class="hl">全链路商家管理与动销转化：</span>独立驱动<span class="num">39个</span>品牌/商家完成建联→资质审查→上会→入驻全闭环，实现新品牌初期动销率突破<span class="num">80%</span>，助力团队Q1引入客户<span class="num">372家</span>、动销<span class="num">GMV 1709W</span>。</li>
+              <li><span class="hl">全链路商家管理与动销转化：</span>独立驱动<span class="num">数十个</span>品牌/商家完成建联→资质审查→上会→入驻全闭环，实现新品牌初期动销率突破<span class="num">80%</span>，助力团队Q1引入客户<span class="num">数百家</span>、达成<span class="num">千万级GMV</span>。</li>
               <li><span class="hl">策略运营与看板搭建：</span>梳理家居、配饰类目靶向池，输出差异化招商策略；用多维表格搭建动销看板、漏斗图定位转化卡点；优化招商SOP，平均入驻周期缩短<span class="num">30%</span>。</li>
               <li><span class="hl">线下渠道拓展：</span>执行"预选-现场BD-社群转化"三段式策略，深度访谈<span class="num">30+家</span>商家，累计落地<span class="num">10余家</span>。</li>
             </ul>
@@ -632,8 +672,8 @@
               <div class="card-date">2026.05 - 至今</div>
             </div>
             <ul class="exp-list">
-              <li><span class="hl">飞书大使项目运营：</span>负责<span class="num">702条</span>线索全链路运营，完成<span class="num">109条</span>结算交叉校验与审批、影响<span class="num">ARR超3,100万</span>、激励约<span class="num">88万</span>；搭建月度结算看板。</li>
-              <li><span class="hl">路演运营：</span>参与<span class="num">10场</span>会销路演（4大区7城），覆盖<span class="num">869家</span>、赢单<span class="num">337家</span>、成交<span class="num">6,525席</span>、ARR约<span class="num">790万</span>，联动<span class="num">45家</span>伙伴；保障单场120-150人零事故执行。</li>
+              <li><span class="hl">飞书大使项目运营：</span>负责<span class="num">数百条</span>线索全链路运营，完成<span class="num">百余个</span>结算交叉校验与审批、影响<span class="num">数千万级ARR</span>、激励约<span class="num">近百万级</span>；搭建月度结算看板。</li>
+              <li><span class="hl">会销路演运营：</span>参与<span class="num">10场</span>会销路演（4大区7城），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；保障单场120-150人零事故执行。</li>
               <li><span class="hl">数据化与AI提效：</span>搭建路演管理驾驶舱实现10场数据日更，设计增购指标体系V2，搭建AI线索转表工具替代手工录入。</li>
             </ul>
           </div>
@@ -645,7 +685,7 @@
               <div class="card-date">2026.01 - 2026.04</div>
             </div>
             <ul class="exp-list">
-              <li><span class="hl">全链路商家管理：</span>独立驱动<span class="num">39个</span>品牌/商家完成全闭环，新品牌初期动销率突破<span class="num">80%</span>，助力Q1引入客户<span class="num">372家</span>、动销<span class="num">GMV 1709W</span>。</li>
+              <li><span class="hl">全链路商家管理：</span>独立驱动<span class="num">数十个</span>品牌/商家完成全闭环，新品牌初期动销率突破<span class="num">80%</span>，助力Q1引入客户<span class="num">数百家</span>、达成<span class="num">千万级GMV</span>。</li>
               <li><span class="hl">策略运营与看板：</span>输出差异化招商策略，搭建动销看板定位转化卡点，优化SOP使平均入驻周期缩短<span class="num">30%</span>。</li>
               <li><span class="hl">线下渠道拓展：</span>三段式策略深度访谈<span class="num">30+家</span>商家，累计落地<span class="num">10余家</span>。</li>
             </ul>
@@ -704,18 +744,18 @@
       <div class="case-card">
         <div class="case-head">
           <span class="case-badge">飞书妙搭 · 数据看板</span>
-          <div class="case-title">SMB 豆包企业版路演管理驾驶舱</div>
+          <div class="case-title">SMB 豆包企业版会销路演管理驾驶舱</div>
           <div class="case-meta">字节跳动 · 飞书商业化 · 从需求到上线约3天</div>
         </div>
 
         <div class="star-block">
           <div class="star-label"><span class="star-letter">S</span>背景 Situation</div>
-          <p>10场会销跨4大区7城密集落地、联动45家渠道伙伴，但数据散落在报名表单、CRM签约系统、会后跟进表中：每场靠人工拉Excel拼数小时、口径不统一；四大区无法横向对比；T+7增购、席位激活等会后转化无抓手。</p>
+          <p>10场会销跨4大区7城密集落地、联动数十家渠道伙伴，但数据散落在报名表单、CRM签约系统、会后跟进表中：每场靠人工拉Excel拼数小时、口径不统一；四大区无法横向对比；T+7增购、席位激活等会后转化无抓手。</p>
         </div>
 
         <div class="star-block">
           <div class="star-label"><span class="star-letter">T</span>任务 Task</div>
-          <p>独立搭建一个驾驶舱，实现会销全链路（邀约→到场→成交→T+7增购）数据一屏可视，支持大区/场次/伙伴多维筛选下钻，并沉淀一套标准化指标体系供45家伙伴统一复盘。</p>
+          <p>独立搭建一个驾驶舱，实现会销全链路（邀约→到场→成交→T+7增购）数据一屏可视，支持大区/场次/伙伴多维筛选下钻，并沉淀一套标准化指标体系供数十家伙伴统一复盘。</p>
         </div>
 
         <div class="star-block">
@@ -731,7 +771,7 @@
         <div class="star-block">
           <div class="star-label"><span class="star-letter">R</span>结果 Result</div>
           <div class="case-result">
-            <p>10场活动<span class="num">全程零数据事故</span>，覆盖<span class="num">869家</span>、赢单<span class="num">337家</span>、成交<span class="num">6,525席</span>、ARR约<span class="num">790万元</span>；客均席位从首场约<span class="num">6席提升至19.4席</span>；四大区首次可横向对比，看板替代人工小时级拉表，成为45家伙伴标准复盘工具，单日3城同开也能统一监控。</p>
+            <p>10场活动<span class="num">全程零数据事故</span>，覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>；客均席位<span class="num">提升超3倍</span>；四大区首次可横向对比，看板替代人工小时级拉表，成为数十家伙伴标准复盘工具，单日3城同开也能统一监控。</p>
           </div>
         </div>
       </div>
@@ -802,19 +842,20 @@
       <h2 class="section-title">联系方式</h2>
       <p class="section-subtitle">期待与您的进一步交流</p>
 
+      <p class="contact-hint no-print">点击即可复制对应联系方式</p>
       <div class="contact-links">
-        <a href="mailto:zlq1106301501@163.com" class="contact-link">
+        <button type="button" class="contact-link copy-btn" data-copy="zlq1106301501@163.com" data-toast="邮箱地址已复制" title="点击复制邮箱">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           zlq1106301501@163.com
-        </a>
-        <div class="contact-link">
+        </button>
+        <button type="button" class="contact-link copy-btn" data-copy="15156294620" data-toast="手机号已复制" title="点击复制手机号">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           15156294620
-        </div>
-        <div class="contact-link">
+        </button>
+        <button type="button" class="contact-link copy-btn" data-copy="Iridescentzlq" data-toast="微信号已复制" title="点击复制微信号">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
           微信：Iridescentzlq
-        </div>
+        </button>
       </div>
     </div>
   </section>
@@ -823,6 +864,9 @@
 <footer>
   <p>© 2026 周乐琪 · 个人简历网站</p>
 </footer>
+
+<!-- 复制成功提示 -->
+<div class="toast" id="copyToast" role="status" aria-live="polite"></div>
 
 <script>
   // Version switching
@@ -910,6 +954,45 @@
       e.preventDefault();
       const target = document.querySelector(link.getAttribute('href'));
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Click to copy contact info
+  const copyToast = document.getElementById('copyToast');
+  let toastTimer = null;
+  function showToast(msg) {
+    copyToast.textContent = '✓ ' + msg;
+    copyToast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => copyToast.classList.remove('show'), 1800);
+  }
+  function legacyCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-9999px';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.dataset.copy || '';
+      const tip = btn.dataset.toast || '已复制';
+      const done = () => showToast(tip);
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {
+          if (legacyCopy(text)) done(); else showToast('复制失败，请手动复制');
+        });
+      } else {
+        if (legacyCopy(text)) done(); else showToast('复制失败，请手动复制');
+      }
     });
   });
 </script>
