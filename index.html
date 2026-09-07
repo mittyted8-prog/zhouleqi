@@ -56,6 +56,17 @@
 
     .font-serif { font-family: 'Noto Serif SC', Georgia, serif; }
 
+    /* Full-screen restrained ambient gradient (static, no JS) */
+    .mesh-full {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(44% 40% at 82% 2%, rgba(37,99,235,.10), transparent 60%),
+        radial-gradient(40% 38% at 2% 18%, rgba(139,92,246,.08), transparent 62%),
+        radial-gradient(50% 46% at 50% 100%, rgba(14,165,233,.08), transparent 62%),
+        radial-gradient(36% 34% at 98% 66%, rgba(99,102,241,.06), transparent 60%),
+        linear-gradient(180deg,#f6f9ff 0%,#f2f5fb 100%);
+    }
+
     /* Header */
     header {
       position: sticky;
@@ -452,7 +463,7 @@
       html { scroll-behavior: auto; }
       body { background: #fff; font-size: 11px; }
       header, .version-switcher, .download-btn, .scroll-indicator, footer,
-      #heroCanvas, .no-print { display: none !important; }
+      #heroCanvas, .mesh-full, .no-print { display: none !important; }
       main { max-width: 100%; padding: 0; }
       #hero { padding: 0 0 16px 0; text-align: left; }
       .hero-name { font-size: 30px; text-align: left; -webkit-text-fill-color: #000; background: none; margin-bottom: 6px; }
@@ -482,6 +493,7 @@
   </style>
 </head>
 <body>
+<div class="mesh-full" aria-hidden="true"></div>
 
 <header>
   <div class="header-inner">
@@ -614,7 +626,7 @@
             </div>
             <ul class="exp-list">
               <li><span class="hl">飞书大使项目运营：</span>负责推荐计划<span class="num">数百条</span>线索全链路运营（核验/清洗/DR/AE分配），完成<span class="num">百余个</span>结算案例五维交叉校验与审批提报、影响<span class="num">数千万级ARR</span>、激励约<span class="num">近百万级</span>；搭建月度结算看板提升对账效率。</li>
-              <li><span class="hl">路演路演全流程运营：</span>参与<span class="num">10场</span>豆包企业版路演（4大区7城，含单日3城同开），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>（赢单率<span class="num">38.8%</span>）、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；负责Kick-off对齐与自闭环执行文档落地，保障单场120-150人零事故执行。</li>
+              <li><span class="hl">路演全流程运营：</span>参与<span class="num">10场</span>豆包企业版路演（4大区7城，含单日3城同开），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>（赢单率<span class="num">38.8%</span>）、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；负责Kick-off对齐与自闭环执行文档落地，保障单场120-150人零事故执行。</li>
               <li><span class="hl">数据化与AI提效：</span>基于妙搭搭建路演管理驾驶舱（双页面、10+组件、全局筛选下钻）实现10场数据日更；设计增购指标体系V2支撑四大区横向对比；搭建AI线索上传转表工具替代手工录入（详见代表作品）。</li>
             </ul>
           </div>
@@ -682,7 +694,7 @@
             </div>
             <ul class="exp-list">
               <li><span class="hl">飞书大使项目运营：</span>负责<span class="num">数百条</span>线索全链路运营，完成<span class="num">百余个</span>结算交叉校验与审批、影响<span class="num">数千万级ARR</span>、激励约<span class="num">近百万级</span>；搭建月度结算看板。</li>
-              <li><span class="hl">路演路演运营：</span>参与<span class="num">10场</span>路演路演（4大区7城），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；保障单场120-150人零事故执行。</li>
+              <li><span class="hl">路演运营：</span>参与<span class="num">10场</span>路演（4大区7城），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；保障单场120-150人零事故执行。</li>
               <li><span class="hl">数据化与AI提效：</span>搭建路演管理驾驶舱实现10场数据日更，设计增购指标体系V2，搭建AI线索转表工具替代手工录入。</li>
             </ul>
           </div>
@@ -920,7 +932,7 @@
       .join('');
   }
 
-  const aboutInternet = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，擅长用数据分析与AI/低代码工具解决业务卡点。曾在字节跳动飞书商业化、得物、阳光融汇资本实习，覆盖<strong>路演运营、商家运营、投研分析</strong>全链路。习惯从0到1搭建数据看板与运营SOP：独立设计路演管理驾驶舱与AI转表工具，把人工小时级拉表变为数据日更，以数据驱动决策、以精细化运营提升转化。';
+  const aboutInternet = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，擅长用数据分析与AI/低代码工具解决业务卡点。曾在字节跳动飞书商业化、得物、阳光融汇资本实习，覆盖<strong>市场运营、商家运营、投研分析</strong>全链路。习惯从0到1搭建数据看板与运营SOP：独立设计路演管理驾驶舱与AI转表工具，把人工小时级拉表变为数据日更，以数据驱动决策、以精细化运营提升转化。';
 
   const aboutFinance = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，具备扎实的财务分析与估值建模能力。曾在阳光融汇资本、国元证券、字节跳动实习，积累<strong>投研分析、债券业务、市场运营</strong>复合经验。擅长行业研究、财务建模与数据分析，能够结合业务数据与市场对标为投资决策提供量化依据。';
 
