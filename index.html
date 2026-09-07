@@ -423,6 +423,17 @@
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+    /* ===== Plan A: lightweight motion layer (vanilla, no dependency) ===== */
+    #hero { position: relative; isolation: isolate; }
+    #heroCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+    .motion-on .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1); }
+    .motion-on .reveal.in { opacity: 1; transform: none; }
+    .tilt { transform-style: preserve-3d; will-change: transform; }
+    @media (prefers-reduced-motion: reduce) {
+      #heroCanvas { display: none; }
+      .motion-on .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+
     /* Responsive */
     @media (max-width: 640px) {
       .hero-name { font-size: 38px; }
@@ -441,7 +452,7 @@
       html { scroll-behavior: auto; }
       body { background: #fff; font-size: 11px; }
       header, .version-switcher, .download-btn, .scroll-indicator, footer,
-      .no-print { display: none !important; }
+      #heroCanvas, .no-print { display: none !important; }
       main { max-width: 100%; padding: 0; }
       #hero { padding: 0 0 16px 0; text-align: left; }
       .hero-name { font-size: 30px; text-align: left; -webkit-text-fill-color: #000; background: none; margin-bottom: 6px; }
@@ -464,7 +475,7 @@
       .exp-list li, .star-block p, .star-block ul li, .about-text, .skill-card p { font-size: 10.5px; line-height: 1.55; }
       .case-card { padding: 14px; }
       .case-result { background: #f5f5f5; border-color: #ddd; padding: 8px 10px; }
-      .fade-in { opacity: 1 !important; transform: none !important; }
+      .fade-in, .reveal { opacity: 1 !important; transform: none !important; }
       .version-content { opacity: 1 !important; transform: none !important; }
       a { color: #000; text-decoration: none; }
     }
@@ -520,7 +531,7 @@
       <h2 class="section-title">关于我</h2>
       <div class="version-content" id="aboutContent">
         <p class="about-text" id="aboutText">
-          厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，擅长用数据分析与AI/低代码工具解决业务卡点。曾在字节跳动飞书商业化、得物、阳光融汇资本实习，覆盖<strong>市场运营、商家运营、投研分析</strong>全链路。习惯从0到1搭建数据看板与运营SOP：独立设计路演管理驾驶舱与AI转表工具，把人工小时级拉表变为数据日更，以数据驱动决策、以精细化运营提升转化。
+          厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，擅长用数据分析与AI/低代码工具解决业务卡点。曾在字节跳动飞书商业化、得物、阳光融汇资本实习，覆盖<strong>会销运营、商家运营、投研分析</strong>全链路。习惯从0到1搭建数据看板与运营SOP：独立设计路演管理驾驶舱与AI转表工具，把人工小时级拉表变为数据日更，以数据驱动决策、以精细化运营提升转化。
         </p>
       </div>
     </div>
@@ -536,7 +547,7 @@
       <div class="highlight-grid">
         <div class="highlight-card">
           <div class="highlight-icon">🚀</div>
-          <h4>字节跳动 · 路演运营与数据化</h4>
+          <h4>字节跳动 · 会销运营与数据化</h4>
           <p>参与10场豆包企业版路演（4大区7城），负责执行文档落地与零事故执行；独立搭建路演驾驶舱实现数据日更。</p>
           <div class="big-num">覆盖近千家企业 · 成交数千席位 · 近千万级ARR</div>
         </div>
@@ -603,7 +614,7 @@
             </div>
             <ul class="exp-list">
               <li><span class="hl">飞书大使项目运营：</span>负责推荐计划<span class="num">数百条</span>线索全链路运营（核验/清洗/DR/AE分配），完成<span class="num">百余个</span>结算案例五维交叉校验与审批提报、影响<span class="num">数千万级ARR</span>、激励约<span class="num">近百万级</span>；搭建月度结算看板提升对账效率。</li>
-              <li><span class="hl">路演路演全流程运营：</span>参与<span class="num">10场</span>豆包企业版路演（4大区7城，含单日3城同开），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>（赢单率<span class="num">38.8%</span>）、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；负责Kick-off对齐与自闭环执行文档落地，保障单场120-150人零事故执行。</li>
+              <li><span class="hl">会销路演全流程运营：</span>参与<span class="num">10场</span>豆包企业版路演（4大区7城，含单日3城同开），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>（赢单率<span class="num">38.8%</span>）、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；负责Kick-off对齐与自闭环执行文档落地，保障单场120-150人零事故执行。</li>
               <li><span class="hl">数据化与AI提效：</span>基于妙搭搭建路演管理驾驶舱（双页面、10+组件、全局筛选下钻）实现10场数据日更；设计增购指标体系V2支撑四大区横向对比；搭建AI线索上传转表工具替代手工录入（详见代表作品）。</li>
             </ul>
           </div>
@@ -671,7 +682,7 @@
             </div>
             <ul class="exp-list">
               <li><span class="hl">飞书大使项目运营：</span>负责<span class="num">数百条</span>线索全链路运营，完成<span class="num">百余个</span>结算交叉校验与审批、影响<span class="num">数千万级ARR</span>、激励约<span class="num">近百万级</span>；搭建月度结算看板。</li>
-              <li><span class="hl">路演路演运营：</span>参与<span class="num">10场</span>路演路演（4大区7城），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；保障单场120-150人零事故执行。</li>
+              <li><span class="hl">会销路演运营：</span>参与<span class="num">10场</span>会销路演（4大区7城），覆盖<span class="num">近千家企业</span>、赢单<span class="num">数百家</span>、成交<span class="num">数千席位</span>、达成<span class="num">近千万级ARR</span>，联动<span class="num">数十家</span>伙伴；保障单场120-150人零事故执行。</li>
               <li><span class="hl">数据化与AI提效：</span>搭建路演管理驾驶舱实现10场数据日更，设计增购指标体系V2，搭建AI线索转表工具替代手工录入。</li>
             </ul>
           </div>
@@ -742,18 +753,18 @@
       <div class="case-card">
         <div class="case-head">
           <span class="case-badge">飞书妙搭 · 数据看板</span>
-          <div class="case-title">SMB 豆包企业版路演路演管理驾驶舱</div>
+          <div class="case-title">SMB 豆包企业版会销路演管理驾驶舱</div>
           <div class="case-meta">字节跳动 · 飞书商业化 · 从需求到上线约3天</div>
         </div>
 
         <div class="star-block">
           <div class="star-label"><span class="star-letter">S</span>背景 Situation</div>
-          <p>10场路演跨4大区7城密集落地、联动数十家渠道伙伴，但数据散落在报名表单、CRM签约系统、会后跟进表中：每场靠人工拉Excel拼数小时、口径不统一；四大区无法横向对比；T+7增购、席位激活等会后转化无抓手。</p>
+          <p>10场会销跨4大区7城密集落地、联动数十家渠道伙伴，但数据散落在报名表单、CRM签约系统、会后跟进表中：每场靠人工拉Excel拼数小时、口径不统一；四大区无法横向对比；T+7增购、席位激活等会后转化无抓手。</p>
         </div>
 
         <div class="star-block">
           <div class="star-label"><span class="star-letter">T</span>任务 Task</div>
-          <p>独立搭建一个驾驶舱，实现路演全链路（邀约→到场→成交→T+7增购）数据一屏可视，支持大区/场次/伙伴多维筛选下钻，并沉淀一套标准化指标体系供数十家伙伴统一复盘。</p>
+          <p>独立搭建一个驾驶舱，实现会销全链路（邀约→到场→成交→T+7增购）数据一屏可视，支持大区/场次/伙伴多维筛选下钻，并沉淀一套标准化指标体系供数十家伙伴统一复盘。</p>
         </div>
 
         <div class="star-block">
@@ -909,7 +920,7 @@
       .join('');
   }
 
-  const aboutInternet = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，擅长用数据分析与AI/低代码工具解决业务卡点。曾在字节跳动飞书商业化、得物、阳光融汇资本实习，覆盖<strong>路演运营、商家运营、投研分析</strong>全链路。习惯从0到1搭建数据看板与运营SOP：独立设计路演管理驾驶舱与AI转表工具，把人工小时级拉表变为数据日更，以数据驱动决策、以精细化运营提升转化。';
+  const aboutInternet = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，擅长用数据分析与AI/低代码工具解决业务卡点。曾在字节跳动飞书商业化、得物、阳光融汇资本实习，覆盖<strong>会销运营、商家运营、投研分析</strong>全链路。习惯从0到1搭建数据看板与运营SOP：独立设计路演管理驾驶舱与AI转表工具，把人工小时级拉表变为数据日更，以数据驱动决策、以精细化运营提升转化。';
 
   const aboutFinance = '厦门大学金融学硕士在读，兼具<strong>数学本科背景</strong>与<strong>金融专业训练</strong>，具备扎实的财务分析与估值建模能力。曾在阳光融汇资本、国元证券、字节跳动实习，积累<strong>投研分析、债券业务、市场运营</strong>复合经验。擅长行业研究、财务建模与数据分析，能够结合业务数据与市场对标为投资决策提供量化依据。';
 
@@ -1028,6 +1039,135 @@
       }
     });
   });
+
+  // ===== Plan A: hero particles + 3D tilt + staggered reveal (progressive enhancement) =====
+  (function () {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    document.body.classList.add('motion-on');
+
+    // --- 1) Hero particle constellation, vanilla canvas ---
+    (function heroParticles() {
+      if (reduceMotion) return;
+      const hero = document.getElementById('hero');
+      if (!hero) return;
+      const canvas = document.createElement('canvas');
+      canvas.id = 'heroCanvas';
+      hero.prepend(canvas);
+      const ctx = canvas.getContext('2d');
+      let w = 0, h = 0, particles = [], raf = null;
+      const mouse = { x: -9999, y: -9999 };
+      const BLUE = '37,99,235';
+
+      function targetCount() {
+        let n = Math.round((w * h) / 26000);
+        n = Math.max(22, Math.min(56, n));
+        if (w < 640) n = Math.min(n, 24);
+        return n;
+      }
+      function resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const r = hero.getBoundingClientRect();
+        w = r.width; h = r.height;
+        canvas.width = Math.round(w * dpr);
+        canvas.height = Math.round(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        particles = [];
+        for (let i = 0; i < targetCount(); i++) {
+          particles.push({
+            x: Math.random() * w, y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.22,
+            vy: (Math.random() - 0.5) * 0.22,
+            r: Math.random() * 1.3 + 0.8,
+            a: Math.random() * 0.32 + 0.22
+          });
+        }
+      }
+      function frame() {
+        ctx.clearRect(0, 0, w, h);
+        const LINK = 120, MLINK = 150;
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < -10) p.x = w + 10; else if (p.x > w + 10) p.x = -10;
+          if (p.y < -10) p.y = h + 10; else if (p.y > h + 10) p.y = -10;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + BLUE + ',' + p.a.toFixed(3) + ')';
+          ctx.fill();
+          for (let j = i + 1; j < particles.length; j++) {
+            const q = particles[j];
+            const dx = p.x - q.x, dy = p.y - q.y, d = Math.hypot(dx, dy);
+            if (d < LINK) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = 'rgba(' + BLUE + ',' + (0.10 * (1 - d / LINK)).toFixed(3) + ')';
+              ctx.lineWidth = 1; ctx.stroke();
+            }
+          }
+          const mdx = p.x - mouse.x, mdy = p.y - mouse.y, md = Math.hypot(mdx, mdy);
+          if (md < MLINK) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = 'rgba(' + BLUE + ',' + (0.16 * (1 - md / MLINK)).toFixed(3) + ')';
+            ctx.lineWidth = 1; ctx.stroke();
+          }
+        }
+        raf = requestAnimationFrame(frame);
+      }
+      function start() { if (raf === null) raf = requestAnimationFrame(frame); }
+      function stop() { if (raf !== null) { cancelAnimationFrame(raf); raf = null; } }
+      resize(); start();
+      let rt;
+      window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(resize, 160); });
+      hero.addEventListener('mousemove', function (e) {
+        const r = hero.getBoundingClientRect();
+        mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+      });
+      hero.addEventListener('mouseleave', function () { mouse.x = -9999; mouse.y = -9999; });
+      document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+    })();
+
+    // --- 2) Staggered scroll reveal ---
+    const cards = Array.from(document.querySelectorAll('.card, .highlight-card, .skill-card, .case-card'));
+    cards.forEach(function (el) { el.classList.add('reveal'); });
+    const revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const sib = Array.from(el.parentNode.children).filter(function (c) { return c.classList.contains('reveal'); });
+        const idx = Math.max(0, sib.indexOf(el));
+        el.style.transitionDelay = Math.min(idx * 80, 320) + 'ms';
+        el.classList.add('in');
+        revealObs.unobserve(el);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+    cards.forEach(function (el) { revealObs.observe(el); });
+
+    // --- 3) Subtle 3D tilt on hover (fine pointers only) ---
+    if (finePointer && !reduceMotion) {
+      const MAX = 7;
+      cards.forEach(function (el) {
+        el.classList.add('tilt');
+        el.addEventListener('mousemove', function (e) {
+          const r = el.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const ry = (px - 0.5) * MAX * 2;
+          const rx = (0.5 - py) * MAX * 2;
+          el.style.transition = 'transform .08s ease-out, box-shadow .2s ease';
+          el.style.transform = 'perspective(1000px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) translateY(-2px)';
+          el.style.boxShadow = '0 14px 34px rgba(37,99,235,0.10), 0 2px 8px rgba(0,0,0,0.04)';
+        });
+        el.addEventListener('mouseleave', function () {
+          el.style.transition = 'transform .5s cubic-bezier(.22,.61,.36,1), box-shadow .4s ease';
+          el.style.transform = '';
+          el.style.boxShadow = '';
+          setTimeout(function () { el.style.transition = ''; }, 520);
+        });
+      });
+    }
+  })();
 </script>
 
 </body>
