@@ -56,17 +56,6 @@
 
     .font-serif { font-family: 'Noto Serif SC', Georgia, serif; }
 
-    /* Full-screen restrained ambient gradient (static, no JS) */
-    .mesh-full {
-      position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      background:
-        radial-gradient(44% 40% at 82% 2%, rgba(37,99,235,.10), transparent 60%),
-        radial-gradient(40% 38% at 2% 18%, rgba(139,92,246,.08), transparent 62%),
-        radial-gradient(50% 46% at 50% 100%, rgba(14,165,233,.08), transparent 62%),
-        radial-gradient(36% 34% at 98% 66%, rgba(99,102,241,.06), transparent 60%),
-        linear-gradient(180deg,#f6f9ff 0%,#f2f5fb 100%);
-    }
-
     /* Header */
     header {
       position: sticky;
@@ -463,7 +452,7 @@
       html { scroll-behavior: auto; }
       body { background: #fff; font-size: 11px; }
       header, .version-switcher, .download-btn, .scroll-indicator, footer,
-      #heroCanvas, .mesh-full, .no-print { display: none !important; }
+      #heroCanvas, .no-print { display: none !important; }
       main { max-width: 100%; padding: 0; }
       #hero { padding: 0 0 16px 0; text-align: left; }
       .hero-name { font-size: 30px; text-align: left; -webkit-text-fill-color: #000; background: none; margin-bottom: 6px; }
@@ -493,7 +482,6 @@
   </style>
 </head>
 <body>
-<div class="mesh-full" aria-hidden="true"></div>
 
 <header>
   <div class="header-inner">
